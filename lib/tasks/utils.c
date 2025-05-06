@@ -1,14 +1,20 @@
 #include "tasks.h"
 
 volatile uint32_t current_time_ms = 0;
-volatile uint32_t counter = 0;
+volatile uint32_t mode_start_time_ms = 0;
+volatile uint32_t counter_1 = 0;
+volatile uint32_t counter_2 = 0;
 
 bool delay(uint32_t total_delay_ms, bool mode) {
     uint32_t start_time = current_time_ms;  // Tempo de início
     while ((current_time_ms - start_time) < total_delay_ms) {
         current_time_ms = to_ms_since_boot(get_absolute_time());  // Atualiza o tempo atual em milissegundos
-        counter = ((int) current_time_ms/1000) % 15;
+        
+        uint32_t elapsed = current_time_ms - mode_start_time_ms;
+        counter_1 = ((int) elapsed/1000) % 15;
+        counter_2 = ((int) elapsed/1000) % 4;
         if (flag != mode) {
+            mode_start_time_ms = current_time_ms;  // reseta tempo do novo modo
             return false;  // Se o modo mudar, sai da função
         }
     }

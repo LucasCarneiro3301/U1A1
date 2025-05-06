@@ -15,9 +15,10 @@
 
 extern volatile uint32_t last_time;
 extern volatile uint32_t current_time_ms;
+extern volatile uint32_t mode_start_time_ms;
 extern int flag;
-extern volatile uint32_t counter;
-extern volatile uint32_t cur_counter;
+extern volatile uint32_t counter_1;
+extern volatile uint32_t counter_2;
 
 // Frequências das notas musicais (em Hz)
 enum Notes {
