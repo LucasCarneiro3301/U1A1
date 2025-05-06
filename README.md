@@ -14,6 +14,7 @@ __Para este trabalho, os seguintes componentes e ferramentas se fazem necessári
 5) 1 Botão Pull-Up.
 7) Ferramenta educacional BitDogLab.
 8) Matriz de LEDs 5x5.
+9) FreeRTOS
 
 __O resultado do projeto pode ser assistido através deste link: [Vídeo de Apresentação - Semáforo Inteligente.]().__
 
