@@ -3,8 +3,18 @@
 volatile uint32_t last_time = 0;
 int flag = true;
 
+/*
+ * Função vBTNATask:
+ * -----------------
+ * Esta é uma tarefa do FreeRTOS responsável por monitorar o botão BTNA. 
+ * Ela alterna o estado de uma variável global `flag` sempre que o botão é pressionado.
+ * 
+ * Para evitar múltiplas leituras indesejadas causadas por ruído mecânico do botão 
+ * (efeito "bouncing"), é implementado um sistema de debounce por tempo — o botão só será 
+ * considerado pressionado se passaram mais de 200 ms desde a última mudança.
+ */
 void vBTNATask() {
-    btn_setup();
+    btn_setup();    // Inicializa e configura o botão como entrada
 
     while (true)
     {

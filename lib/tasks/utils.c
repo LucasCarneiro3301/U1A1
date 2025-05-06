@@ -5,6 +5,7 @@ volatile uint32_t mode_start_time_ms = 0;
 volatile uint32_t counter_1 = 0;
 volatile uint32_t counter_2 = 0;
 
+// Sincronizador
 bool delay(uint32_t total_delay_ms, bool mode) {
     uint32_t start_time = current_time_ms;  // Tempo de início
     while ((current_time_ms - start_time) < total_delay_ms) {
