@@ -10,7 +10,7 @@ include(pico_sdk_import.cmake)
 set(FREERTOS_KERNEL_PATH "D:/FreeRTOS-Kernel")
 include(${FREERTOS_KERNEL_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
-project(PiscaLed C CXX ASM)
+project(U1A1 C CXX ASM)
 pico_sdk_init()
 
 
